@@ -5,7 +5,16 @@ const RootDir = "folder"
 # Ниже реализуйте требуемую задачу
 var dirs, files, exts: seq[string]
 
+dirs.add(RootDir);
+var paths = toSeq(walkDirRec(RootDir, yieldFilter = {pcDir, pcFile}));
 
+for path in paths:
+    let fileInfo = splitFile(path);
+    if(fileInfo.ext == ""):
+        dirs.add(replace(path, " ", "_"));
+    else:
+        files.add(fileInfo.name & fileInfo.ext);
+        exts.add(fileInfo.ext);
 
 # Не изменяйте код ниже
 import sets
