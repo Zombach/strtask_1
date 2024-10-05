@@ -6,7 +6,7 @@
             "request": "launch",
             "name": "nim: debug current file",
             "preLaunchTask": "nim: build current file (for debugging)",
-            "program": "${workspaceFolder}/bin/${fileBasenameNoExtension}",
+            "program": "${workspaceFolder}\\${fileBasenameNoExtension}",
             "args": [],
             "cwd": "${workspaceFolder}",
         }
