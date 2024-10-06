@@ -4,11 +4,9 @@ var text = """English texts for b3ginners to practice read7ng and comprehension 
 # Ниже произведите действия над переменной text
 var schars, counter, numbers: int
 
-var expr = re("\\W", flags = {re_study, re_ignore_case})
-schars = text.findAll(expr).join().len;
-counter = count(text, "a");
-expr = re("\\d", flags = {re_study, re_ignore_case})
-numbers = parseInt(text.findAll(expr).join());
+schars = text.findAll("[\\W_]".re).join.len
+counter = text.count("a")
+numbers = text.findAll("\\d".re).join.parseInt
 
 # Не изменяйте код ниже
 doAssert schars == 57
